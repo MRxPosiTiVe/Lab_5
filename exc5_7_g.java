@@ -12,7 +12,7 @@ public class exc5_7_g {
 
         } else if (x >= -4 & x <= 4) {
             if (x <= 0) {
-                g = (3 + Math.pow(Math.cos(2 * x), 2)) / (1 + Math.pow(Math.cos(x), 2));
+                g = (3 + Math.pow(Math.sin(2 * x), 2)) / (1 + Math.pow(Math.cos(x), 2));
                 System.out.println("g = " + g);
             } else {
                 g = (2 * Math.sqrt(1 + 2 * x));
