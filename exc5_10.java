@@ -4,18 +4,19 @@ public class exc5_10 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Опрос на знание Звездных Войн");
-        String answer;
+        int answer;
         int ans, counter = 0;
-        System.out.print("Хотите пройти опрос? ");
-        answer = input.nextLine().toLowerCase();
+        System.out.println("Хотите пройти опрос? ");
+        System.out.println("1) Да\n2) Нет");
+        answer = input.nextInt();
 
-        if (answer.compareTo("да") == 0 || answer.compareTo("хочу") == 0 || answer.compareTo("yes") == 0) {
+        if (answer == 1 || answer == 2) {
             System.out.println("Вопрос 1: С какой фразы начинается космическая киносага Джорджа Лукаса?");
             System.out.println("""
                     1) Совсем недавно на соседней планете...
-                    2) В тридевятом царстве, в тридесятом государстве...
+                    2) Давным-давно в далекой-далекой вселенной...
                     3) Давным-давно в далекой-далекой галактике...
-                    4) Все счастливые семьи похожи друг на друга, каждая несчастливая семья несчастлива по-своему...""");
+                    4) Давным-давно на далекой-далекой планете...""");
             ans = input.nextInt();
             switch (ans) {
                 case 1 -> System.out.println("Ответ не верный!");
@@ -50,7 +51,7 @@ public class exc5_10 {
             System.out.println("""
                     1) Дарт Вейпер
                     2) Дарт Вейдер
-                    3) Дарт Мега-Молл
+                    3) Энакин Скайуокер
                     4) Дарт Мол""");
             ans = input.nextInt();
             switch (ans) {
@@ -65,9 +66,9 @@ public class exc5_10 {
             }
             System.out.println("Вопрос 4: Как называется самое мощное оружие Империи?");
             System.out.println("""
-                    1) «Звезда по имени Солнце»
-                    2) «Звезда пленительного счастья»
-                    3) «Звезда жизни»
+                    1) «Звезда присмерти»
+                    2) «Звезда апокалипсиса»
+                    3) «Звезда посмертия»
                     4) «Звезда смерти»""");
             ans = input.nextInt();
             switch (ans) {
@@ -164,7 +165,7 @@ public class exc5_10 {
                 case 4 -> System.out.println("Ответ не верный!");
                 default -> System.out.println("Вы ввели не верный формат данных!");
             }
-            System.out.println("ФИНАЛЬНЫЙ ВОПРОС 10: Самый пидорский босс в Star Wars Fallen Order?");
+            System.out.println("ФИНАЛЬНЫЙ ВОПРОС 10: Самый не приятный босс в Star Wars Fallen Order?");
             System.out.println("""
                     1) Швабра
                     2) Дарт Вейдер
@@ -181,13 +182,24 @@ public class exc5_10 {
                 case 4 -> System.out.println("Ответ не верный!");
                 default -> System.out.println("Вы ввели не верный формат данных!");
             }
+            System.out.println("А теперь тест на ПЛОХОГО ЧЕЛОВЕКА, выбери: ");
+            System.out.println("1) Империя\n2) Повстанцы");
+            ans = input.nextInt();
+
+            switch (ans) {
+                case 1 -> counter += (Math.random() * (6 - 4) + 4);
+                case 2 -> {
+                    counter = 0;
+                    System.out.println("Ну ты и не очень конечно...!");
+                }
+            }
 
             System.out.printf("Правильных ответов: %d из 10 \n", counter);
             if (counter < 5) {
-                System.out.println("Оценка: Помяням!");
+                System.out.println("Оценка: Помянем!");
             } else if (counter <= 7) {
                 System.out.println("Оценка: Харош, че-то могешь");
-            } else if (counter == 10) {
+            } else if (counter >= 10) {
                 System.out.println("Оценка: Грандмастер ордена джедаев или император вишейт (не позер)");
             } else {
                 System.out.println("Оценка: Ультрамегасупер-Харооооош, не позер");
